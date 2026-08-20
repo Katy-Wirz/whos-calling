@@ -161,8 +161,8 @@ function createFeedback(details, wordCount, questionCount, language) {
 const translations = {
   de: {
     pageTitle: "Wer ruft an? – Kaltakquise trainieren", pageDescription: "Kostenloses, privates Training für deutsche Kaltakquise-Gespräche im Browser.",
-    brandName: "Wer ruft an?", brandFooter: "Wer ruft an? · MVP", mainNavigation: "Hauptnavigation", homeLabel: "Wer ruft an? Startseite", dashboard: "Übersicht", startTraining: "Training starten", training: "Training", history: "Verlauf", localData: "Alle Daten bleiben in diesem Browser", sections: "Bereiche", searchScenarios: "Szenarien suchen", searchScenario: "Szenario suchen", language: "Sprache", profileShort: "DU", profileLabel: "DU – lokales Profil",
-    dashboardTitle: "Sicherer ins nächste Kaltgespräch.", dashboardIntro: "Trainiere Einstieg, Bedarf und Einwandbehandlung mit realistischen Gesprächsverläufen.", sessionDescription: "Du rufst einen Entscheider im Mittelstand an. Gewinne in wenigen Sätzen seine Aufmerksamkeit.", duration: "4–6 Min.", objections: "3 Einwände", thisWeek: "Diese Woche", averageScore: "Ø Score", calls: "Gespräche", bestScore: "Bester Score", streak: "Serie", scenarios: "Szenarien", exercises: "3 Übungen",
+    brandName: "Wer ruft an?", brandFooter: "Wer ruft an? · MVP", mainNavigation: "Hauptnavigation", homeLabel: "Wer ruft an? Startseite", dashboard: "Übersicht", startTraining: "Training starten", training: "Training", history: "Verlauf", localData: "Alle Daten bleiben in diesem Browser", sections: "Bereiche", language: "Sprache", profileShort: "DU", profileLabel: "DU – lokales Profil",
+    dashboardTitle: "Sicherer ins nächste Kaltgespräch.", dashboardIntro: "Trainiere Einstieg, Bedarf und Einwandbehandlung mit realistischen Gesprächsverläufen.", thisWeek: "Diese Woche", averageScore: "Ø Score", calls: "Gespräche", bestScore: "Bester Score", streak: "Serie", scenarios: "Szenarien", exercises: "3 Übungen",
     backDashboard: "← Zur Übersicht", callTraining: "Gesprächstraining", endCall: "Gespräch beenden", callProgress: "Gesprächsfortschritt", connected: "Verbunden", replay: "Antwort erneut abspielen", whatSay: "Was sagst du?", keyboardReady: "Tastatur bereit", yourGoal: "Dein Ziel", replyLabel: "Antwort eingeben oder Mikrofon nutzen", microphone: "Mikrofon", sendReply: "Antwort senden", speechNote: "Tippen funktioniert immer. Sprache kann der Browser online verarbeiten.", conversation: "Gespräch",
     evaluationReady: "Deine Auswertung ist bereit.", callProfile: "Dein Gesprächsprofil", feedback: "Konkretes Feedback", toDashboard: "Zur Übersicht", again: "Noch einmal", yourCalls: "Deine Gespräche.", historyPrivacy: "Nur in diesem Browser. Keine Cloud, kein Konto.", footerPrivacy: "Texte und Verlauf bleiben lokal. Sprachverarbeitung hängt vom Browser ab.",
     new: "Neu", completed: "{count} absolviert", scenarioStart: "Szenario starten", selected: "„{title}“ ausgewählt", noCalls: "Noch keine Gespräche. Starte dein erstes Training.", rounds: "{count} Gesprächsrunden", strong: "Stark", solid: "Solide", keepPracticing: "Weiter üben", prospect: "Prospekt", you: "Du",
@@ -171,8 +171,8 @@ const translations = {
   },
   en: {
     pageTitle: "Who's calling? – Practice cold calls", pageDescription: "Free, private cold-call practice in your browser.",
-    brandName: "Who's calling?", brandFooter: "Who's calling? · MVP", mainNavigation: "Main navigation", homeLabel: "Who's calling? home", dashboard: "Overview", startTraining: "Start training", training: "Training", history: "History", localData: "All data stays in this browser", sections: "Sections", searchScenarios: "Search scenarios", searchScenario: "Search scenario", language: "Language", profileShort: "ME", profileLabel: "ME – local profile",
-    dashboardTitle: "More confidence on your next cold call.", dashboardIntro: "Practice openings, discovery, and objection handling with realistic conversations.", sessionDescription: "You are calling a decision-maker at a medium-sized company. Win their attention in a few sentences.", duration: "4–6 min", objections: "3 objections", thisWeek: "This week", averageScore: "Avg. score", calls: "Calls", bestScore: "Best score", streak: "Streak", scenarios: "Scenarios", exercises: "3 exercises",
+    brandName: "Who's calling?", brandFooter: "Who's calling? · MVP", mainNavigation: "Main navigation", homeLabel: "Who's calling? home", dashboard: "Overview", startTraining: "Start training", training: "Training", history: "History", localData: "All data stays in this browser", sections: "Sections", language: "Language", profileShort: "ME", profileLabel: "ME – local profile",
+    dashboardTitle: "More confidence on your next cold call.", dashboardIntro: "Practice openings, discovery, and objection handling with realistic conversations.", thisWeek: "This week", averageScore: "Avg. score", calls: "Calls", bestScore: "Best score", streak: "Streak", scenarios: "Scenarios", exercises: "3 exercises",
     backDashboard: "← Back to overview", callTraining: "Call training", endCall: "End call", callProgress: "Call progress", connected: "Connected", replay: "Replay response", whatSay: "What do you say?", keyboardReady: "Keyboard ready", yourGoal: "Your goal", replyLabel: "Type a reply or use the microphone", microphone: "Microphone", sendReply: "Send reply", speechNote: "Typing always works. Your browser may process speech online.", conversation: "Conversation",
     evaluationReady: "Your evaluation is ready.", callProfile: "Your call profile", feedback: "Specific feedback", toDashboard: "Back to overview", again: "Try again", yourCalls: "Your calls.", historyPrivacy: "Only in this browser. No cloud, no account.", footerPrivacy: "Text and history stay local. Speech processing depends on your browser.",
     new: "New", completed: "{count} completed", scenarioStart: "Start scenario", selected: "“{title}” selected", noCalls: "No calls yet. Start your first training session.", rounds: "{count} conversation rounds", strong: "Strong", solid: "Solid", keepPracticing: "Keep practicing", prospect: "Prospect", you: "You",
@@ -193,7 +193,6 @@ const elements = {
   views: document.querySelectorAll(".view"),
   routeButtons: document.querySelectorAll("[data-route]"),
   scenarioList: document.querySelector("#scenario-list"),
-  scenarioSearch: document.querySelector("#scenario-search"),
   languageSelect: document.querySelector("#language-select"),
   callsCount: document.querySelector("#calls-count"),
   bestScore: document.querySelector("#best-score"),
@@ -299,13 +298,11 @@ function navigate(route) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function renderScenarios(filter = "") {
-  const query = normalize(filter);
+function renderScenarios() {
   elements.scenarioList.replaceChildren(...scenarios.map((scenario, index) => {
     const copy = getScenario(scenario);
     const item = document.createElement("div");
     item.className = `scenario-item${scenario.id === selectedScenarioId ? " selected" : ""}`;
-    item.hidden = Boolean(query && !normalize(`${copy.title} ${copy.short}`).includes(query));
     item.innerHTML = `<span class="scenario-number">0${index + 1}</span><span class="scenario-copy"><strong></strong><small></small></span><button type="button"><svg><use href="#i-arrow"/></svg></button>`;
     item.querySelector("strong").textContent = copy.title;
     item.querySelector("small").textContent = copy.short;
@@ -314,7 +311,7 @@ function renderScenarios(filter = "") {
     item.addEventListener("click", event => {
       if (event.target.closest("button")) return;
       selectedScenarioId = scenario.id;
-      renderScenarios(elements.scenarioSearch.value);
+      renderScenarios();
       showToast(t("selected", { title: copy.title }));
     });
     return item;
@@ -329,12 +326,8 @@ function renderDashboard() {
   elements.bestScore.textContent = scores.length ? Math.max(...scores) : "–";
   elements.streakCount.textContent = Math.min(history.length, 7);
   elements.dashboardScore.querySelector("strong").textContent = scores.length ? average : "–";
-  const scenario = getScenario(scenarios.find(item => item.id === selectedScenarioId) || scenarios[0]);
-  document.querySelector("#session-title").textContent = scenario.title;
-  document.querySelector("#session-description").textContent = t("sessionDescription");
-  document.querySelector("#session-level").textContent = scenario.level;
   elements.trendLabel.textContent = history.length ? t("completed", { count: history.length }) : t("new");
-  renderScenarios(elements.scenarioSearch.value);
+  renderScenarios();
 }
 
 function renderHistory() {
@@ -579,7 +572,6 @@ document.querySelector("#retry-call").addEventListener("click", () => startCall(
 document.querySelector("#replay-line").addEventListener("click", () => speakText(elements.prospectLine.textContent.replace(/[„“]/g, "")));
 elements.replyForm.addEventListener("submit", submitReply);
 elements.micButton.addEventListener("click", toggleRecognition);
-elements.scenarioSearch.addEventListener("input", event => renderScenarios(event.target.value));
 elements.languageSelect.addEventListener("change", event => setLanguage(event.target.value));
 document.querySelectorAll(".wordmark, .brand-mark").forEach(link => link.addEventListener("click", event => {
   event.preventDefault();
