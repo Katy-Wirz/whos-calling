@@ -57,7 +57,6 @@
         <section id="dashboard-view" class="view active" aria-labelledby="dashboard-title">
           <div class="page-heading">
             <div>
-              <p class="eyebrow">Gesprächstraining · Browserbasiert</p>
               <h1 id="dashboard-title">Sicherer ins nächste<br>Kaltgespräch.</h1>
               <p>Trainiere Einstieg, Bedarf und Einwandbehandlung mit realistischen Gesprächsverläufen.</p>
             </div>
@@ -68,7 +67,6 @@
 
           <div class="dashboard-grid">
             <section class="card session-card" aria-labelledby="session-title">
-              <div class="card-label"><span class="live-dot"></span> Nächste Übung</div>
               <h2 id="session-title">Der skeptische Geschäftsführer</h2>
               <p class="muted">Du rufst einen Entscheider im Mittelstand an. Gewinne in wenigen Sätzen seine Aufmerksamkeit.</p>
               <div class="session-visual" aria-hidden="true">
@@ -84,7 +82,7 @@
 
             <section class="card progress-card" aria-labelledby="progress-title">
               <div class="card-header">
-                <div><p class="card-label">Dein Fortschritt</p><h2 id="progress-title">Diese Woche</h2></div>
+                <h2 id="progress-title">Diese Woche</h2>
                 <span class="trend" id="trend-label">Neu</span>
               </div>
               <div class="score-ring" id="dashboard-score" style="--score: 0"><strong>–</strong><span>Ø Score</span></div>
@@ -97,14 +95,13 @@
 
             <section class="card scenarios-card" aria-labelledby="scenarios-title">
               <div class="card-header">
-                <div><p class="card-label">Bibliothek</p><h2 id="scenarios-title">Szenarien</h2></div>
+                <h2 id="scenarios-title">Szenarien</h2>
                 <span class="muted small">3 Übungen</span>
               </div>
               <div id="scenario-list" class="scenario-list"></div>
             </section>
 
             <section class="card method-card" aria-labelledby="method-title">
-              <p class="card-label">Gesprächsformel</p>
               <h2 id="method-title">Klarheit vor Schlagfertigkeit.</h2>
               <ol class="method-list">
                 <li><span>01</span><div><strong>Relevanz</strong><small>Warum gerade dieser Kontakt?</small></div></li>
@@ -119,7 +116,6 @@
           <div class="practice-heading">
             <div>
               <button class="text-button back-dashboard" type="button">← Zur Übersicht</button>
-              <p class="eyebrow" id="practice-step">Gespräch · Runde 1 von 4</p>
               <h1 id="practice-title">Gesprächstraining</h1>
             </div>
             <button class="secondary-button" id="end-call" type="button">Gespräch beenden</button>
@@ -134,7 +130,6 @@
                 <span class="timer" id="call-timer">00:00</span>
               </div>
               <div class="prospect-avatar" aria-hidden="true"><span id="prospect-initials">MK</span><div class="voice-rings"></div></div>
-              <p class="card-label">Gesprächspartner</p>
               <h2 id="prospect-name">Martin Keller</h2>
               <p class="muted" id="prospect-role">Geschäftsführer · Keller Werktechnik</p>
               <blockquote id="prospect-line">„Keller, guten Tag?“</blockquote>
@@ -143,7 +138,7 @@
 
             <section class="card response-card" aria-labelledby="response-title">
               <div class="card-header">
-                <div><p class="card-label">Deine Antwort</p><h2 id="response-title">Was sagst du?</h2></div>
+                <h2 id="response-title">Was sagst du?</h2>
                 <span class="mode-label" id="input-mode">Tastatur bereit</span>
               </div>
               <div class="prompt-box" id="coach-prompt"><strong>Dein Ziel</strong><span>Stelle dich vor und nenne einen konkreten Anlass.</span></div>
@@ -159,7 +154,7 @@
             </section>
 
             <aside class="card transcript-card" aria-labelledby="transcript-title">
-              <div class="card-header"><div><p class="card-label">Live-Mitschrift</p><h2 id="transcript-title">Gespräch</h2></div></div>
+              <div class="card-header"><h2 id="transcript-title">Gespräch</h2></div>
               <ol id="transcript-list" class="transcript-list" aria-live="polite"></ol>
             </aside>
           </div>
@@ -168,20 +163,19 @@
         <section id="results-view" class="view" aria-labelledby="results-title">
           <div class="results-wrap">
             <section class="card result-hero">
-              <p class="eyebrow">Gespräch abgeschlossen</p>
               <div class="result-score" id="result-score">0</div>
               <div><h1 id="results-title">Guter Anfang.</h1><p id="result-summary">Deine Auswertung ist bereit.</p></div>
             </section>
             <div class="results-grid">
-              <section class="card"><p class="card-label">Detailwertung</p><h2>Dein Gesprächsprofil</h2><div id="score-breakdown" class="score-breakdown"></div></section>
-              <section class="card"><p class="card-label">Nächster Versuch</p><h2>Konkretes Feedback</h2><ul id="feedback-list" class="feedback-list"></ul></section>
+              <section class="card"><h2>Dein Gesprächsprofil</h2><div id="score-breakdown" class="score-breakdown"></div></section>
+              <section class="card"><h2>Konkretes Feedback</h2><ul id="feedback-list" class="feedback-list"></ul></section>
             </div>
             <div class="result-actions"><button class="secondary-button back-dashboard" type="button">Zur Übersicht</button><button class="primary-button" id="retry-call" type="button">Noch einmal <svg><use href="#i-arrow"/></svg></button></div>
           </div>
         </section>
 
         <section id="history-view" class="view" aria-labelledby="history-title">
-          <div class="page-heading compact"><div><p class="eyebrow">Lokal gespeichert</p><h1 id="history-title">Deine Gespräche.</h1><p>Nur in diesem Browser. Keine Cloud, kein Konto.</p></div></div>
+          <div class="page-heading compact"><div><h1 id="history-title">Deine Gespräche.</h1><p>Nur in diesem Browser. Keine Cloud, kein Konto.</p></div></div>
           <section class="card history-card"><div id="history-list"></div></section>
         </section>
       </main>

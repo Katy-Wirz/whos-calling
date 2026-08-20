@@ -115,7 +115,6 @@ const elements = {
   streakCount: document.querySelector("#streak-count"),
   dashboardScore: document.querySelector("#dashboard-score"),
   trendLabel: document.querySelector("#trend-label"),
-  practiceStep: document.querySelector("#practice-step"),
   callProgress: document.querySelector(".call-progress"),
   callStatus: document.querySelector("#call-status"),
   callTimer: document.querySelector("#call-timer"),
@@ -267,7 +266,6 @@ function startCall(scenarioId) {
 function updateRound() {
   if (!call) return;
   const current = Math.min(call.round, 3);
-  elements.practiceStep.textContent = `Gespräch · Runde ${current + 1} von 4`;
   elements.coachPrompt.textContent = call.scenario.prompts[current];
   elements.callProgress.setAttribute("aria-valuenow", String(current));
   elements.callProgress.querySelector("span").style.width = `${current * 25}%`;
