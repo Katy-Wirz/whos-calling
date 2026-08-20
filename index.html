@@ -25,31 +25,35 @@
   </svg>
 
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Hauptnavigation">
-      <a class="brand-mark" href="#" aria-label="Wer ruft an? Startseite">W</a>
+    <aside class="sidebar" aria-label="Hauptnavigation" data-i18n-aria="mainNavigation">
+      <a class="brand-mark" href="#" aria-label="Wer ruft an? Startseite" data-i18n-aria="homeLabel">W</a>
       <nav class="side-nav">
-        <button class="icon-button active" data-route="dashboard" aria-label="Übersicht" title="Übersicht"><svg><use href="#i-home"/></svg></button>
-        <button class="icon-button" data-route="practice" aria-label="Training starten" title="Training"><svg><use href="#i-phone"/></svg></button>
-        <button class="icon-button" data-route="history" aria-label="Verlauf" title="Verlauf"><svg><use href="#i-chart"/></svg></button>
+        <button class="icon-button active" data-route="dashboard" aria-label="Übersicht" title="Übersicht" data-i18n-aria="dashboard" data-i18n-title="dashboard"><svg><use href="#i-home"/></svg></button>
+        <button class="icon-button" data-route="practice" aria-label="Training starten" title="Training" data-i18n-aria="startTraining" data-i18n-title="training"><svg><use href="#i-phone"/></svg></button>
+        <button class="icon-button" data-route="history" aria-label="Verlauf" title="Verlauf" data-i18n-aria="history" data-i18n-title="history"><svg><use href="#i-chart"/></svg></button>
       </nav>
-      <div class="privacy-mark" title="Alle Daten bleiben in diesem Browser"><svg><use href="#i-shield"/></svg></div>
+      <div class="privacy-mark" title="Alle Daten bleiben in diesem Browser" data-i18n-title="localData"><svg><use href="#i-shield"/></svg></div>
     </aside>
 
     <div class="app-body">
       <header class="topbar">
-        <a class="wordmark" href="#">Wer ruft an?</a>
-        <nav class="top-nav" aria-label="Bereiche">
-          <button class="nav-link active" data-route="dashboard">Übersicht</button>
-          <button class="nav-link" data-route="practice">Training</button>
-          <button class="nav-link" data-route="history">Verlauf</button>
+        <a class="wordmark" href="#" data-i18n="brandName">Wer ruft an?</a>
+        <nav class="top-nav" aria-label="Bereiche" data-i18n-aria="sections">
+          <button class="nav-link active" data-route="dashboard" data-i18n="dashboard">Übersicht</button>
+          <button class="nav-link" data-route="practice" data-i18n="training">Training</button>
+          <button class="nav-link" data-route="history" data-i18n="history">Verlauf</button>
         </nav>
         <div class="top-actions">
           <div class="search-field">
             <svg><use href="#i-search"/></svg>
-            <label class="sr-only" for="scenario-search">Szenarien suchen</label>
-            <input id="scenario-search" type="search" placeholder="Szenario suchen">
+            <label class="sr-only" for="scenario-search" data-i18n="searchScenarios">Szenarien suchen</label>
+            <input id="scenario-search" type="search" placeholder="Szenario suchen" data-i18n-placeholder="searchScenario">
           </div>
-          <button class="avatar" aria-label="DU – lokales Profil">DU</button>
+          <select class="language-select" id="language-select" aria-label="Sprache" data-i18n-aria="language">
+            <option value="de">DE</option>
+            <option value="en">EN</option>
+          </select>
+          <button class="avatar" aria-label="DU – lokales Profil" data-i18n="profileShort" data-i18n-aria="profileLabel">DU</button>
         </div>
       </header>
 
@@ -57,104 +61,92 @@
         <section id="dashboard-view" class="view active" aria-labelledby="dashboard-title">
           <div class="page-heading">
             <div>
-              <h1 id="dashboard-title">Sicherer ins nächste<br>Kaltgespräch.</h1>
-              <p>Trainiere Einstieg, Bedarf und Einwandbehandlung mit realistischen Gesprächsverläufen.</p>
+              <h1 id="dashboard-title" data-i18n="dashboardTitle">Sicherer ins nächste Kaltgespräch.</h1>
+              <p data-i18n="dashboardIntro">Trainiere Einstieg, Bedarf und Einwandbehandlung mit realistischen Gesprächsverläufen.</p>
             </div>
             <button class="primary-button" id="start-practice">
-              Training starten <svg><use href="#i-arrow"/></svg>
+              <span data-i18n="startTraining">Training starten</span> <svg><use href="#i-arrow"/></svg>
             </button>
           </div>
 
           <div class="dashboard-grid">
             <section class="card session-card" aria-labelledby="session-title">
               <h2 id="session-title">Der skeptische Geschäftsführer</h2>
-              <p class="muted">Du rufst einen Entscheider im Mittelstand an. Gewinne in wenigen Sätzen seine Aufmerksamkeit.</p>
-              <div class="session-visual" aria-hidden="true">
-                <div class="sound-orbit"><span></span><span></span><span></span><span></span><span></span></div>
-                <div class="call-badge"><svg><use href="#i-phone"/></svg></div>
-              </div>
+              <p class="muted" id="session-description">Du rufst einen Entscheider im Mittelstand an. Gewinne in wenigen Sätzen seine Aufmerksamkeit.</p>
               <div class="session-meta">
-                <span><svg><use href="#i-clock"/></svg> 4–6 Min.</span>
-                <span>Einsteiger</span>
-                <span>3 Einwände</span>
+                <span><svg><use href="#i-clock"/></svg> <span data-i18n="duration">4–6 Min.</span></span>
+                <span id="session-level">Einsteiger</span>
+                <span data-i18n="objections">3 Einwände</span>
               </div>
             </section>
 
             <section class="card progress-card" aria-labelledby="progress-title">
               <div class="card-header">
-                <h2 id="progress-title">Diese Woche</h2>
+                <h2 id="progress-title" data-i18n="thisWeek">Diese Woche</h2>
                 <span class="trend" id="trend-label">Neu</span>
               </div>
-              <div class="score-ring" id="dashboard-score" style="--score: 0"><strong>–</strong><span>Ø Score</span></div>
+              <div class="score-ring" id="dashboard-score"><strong>–</strong><span data-i18n="averageScore">Ø Score</span></div>
               <div class="mini-stats">
-                <div><strong id="calls-count">0</strong><span>Gespräche</span></div>
-                <div><strong id="best-score">–</strong><span>Bester Score</span></div>
-                <div><strong id="streak-count">0</strong><span>Serie</span></div>
+                <div><strong id="calls-count">0</strong><span data-i18n="calls">Gespräche</span></div>
+                <div><strong id="best-score">–</strong><span data-i18n="bestScore">Bester Score</span></div>
+                <div><strong id="streak-count">0</strong><span data-i18n="streak">Serie</span></div>
               </div>
             </section>
 
             <section class="card scenarios-card" aria-labelledby="scenarios-title">
               <div class="card-header">
-                <h2 id="scenarios-title">Szenarien</h2>
-                <span class="muted small">3 Übungen</span>
+                <h2 id="scenarios-title" data-i18n="scenarios">Szenarien</h2>
+                <span class="muted small" data-i18n="exercises">3 Übungen</span>
               </div>
               <div id="scenario-list" class="scenario-list"></div>
             </section>
 
-            <section class="card method-card" aria-labelledby="method-title">
-              <h2 id="method-title">Klarheit vor Schlagfertigkeit.</h2>
-              <ol class="method-list">
-                <li><span>01</span><div><strong>Relevanz</strong><small>Warum gerade dieser Kontakt?</small></div></li>
-                <li><span>02</span><div><strong>Dialog</strong><small>Eine offene Frage stellen.</small></div></li>
-                <li><span>03</span><div><strong>Nächster Schritt</strong><small>Konkret und leicht zusagbar.</small></div></li>
-              </ol>
-            </section>
           </div>
         </section>
 
         <section id="practice-view" class="view" aria-labelledby="practice-title">
           <div class="practice-heading">
             <div>
-              <button class="text-button back-dashboard" type="button">← Zur Übersicht</button>
-              <h1 id="practice-title">Gesprächstraining</h1>
+              <button class="text-button back-dashboard" type="button" data-i18n="backDashboard">← Zur Übersicht</button>
+              <h1 id="practice-title" data-i18n="callTraining">Gesprächstraining</h1>
             </div>
-            <button class="secondary-button" id="end-call" type="button">Gespräch beenden</button>
+            <button class="secondary-button" id="end-call" type="button" data-i18n="endCall">Gespräch beenden</button>
           </div>
 
-          <div class="call-progress" role="progressbar" aria-label="Gesprächsfortschritt" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><span></span></div>
+          <div class="call-progress" role="progressbar" aria-label="Gesprächsfortschritt" data-i18n-aria="callProgress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><span></span></div>
 
           <div class="practice-grid">
             <section class="card call-stage" aria-labelledby="prospect-name">
               <div class="call-status-row">
-                <span class="status-pill" id="call-status"><span></span> Verbunden</span>
+                <span class="status-pill" id="call-status"><span></span> <span data-i18n="connected">Verbunden</span></span>
                 <span class="timer" id="call-timer">00:00</span>
               </div>
               <div class="prospect-avatar" aria-hidden="true"><span id="prospect-initials">MK</span><div class="voice-rings"></div></div>
               <h2 id="prospect-name">Martin Keller</h2>
               <p class="muted" id="prospect-role">Geschäftsführer · Keller Werktechnik</p>
               <blockquote id="prospect-line">„Keller, guten Tag?“</blockquote>
-              <button class="icon-text-button" id="replay-line" type="button"><svg><use href="#i-volume"/></svg> Antwort erneut abspielen</button>
+              <button class="icon-text-button" id="replay-line" type="button"><svg><use href="#i-volume"/></svg> <span data-i18n="replay">Antwort erneut abspielen</span></button>
             </section>
 
             <section class="card response-card" aria-labelledby="response-title">
               <div class="card-header">
-                <h2 id="response-title">Was sagst du?</h2>
-                <span class="mode-label" id="input-mode">Tastatur bereit</span>
+                <h2 id="response-title" data-i18n="whatSay">Was sagst du?</h2>
+                <span class="mode-label" id="input-mode" data-i18n="keyboardReady">Tastatur bereit</span>
               </div>
-              <div class="prompt-box" id="coach-prompt"><strong>Dein Ziel</strong><span>Stelle dich vor und nenne einen konkreten Anlass.</span></div>
+              <div class="prompt-box" id="coach-prompt"><strong data-i18n="yourGoal">Dein Ziel</strong><span>Stelle dich vor und nenne einen konkreten Anlass.</span></div>
               <form id="reply-form">
-                <label for="reply-input">Antwort eingeben oder Mikrofon nutzen</label>
+                <label for="reply-input" data-i18n="replyLabel">Antwort eingeben oder Mikrofon nutzen</label>
                 <textarea id="reply-input" rows="4" maxlength="500" placeholder="Guten Tag Herr Keller, mein Name ist …" required></textarea>
                 <div class="reply-actions">
-                  <button class="mic-button" id="mic-button" type="button" aria-pressed="false"><svg><use href="#i-mic"/></svg><span>Mikrofon</span></button>
-                  <button class="primary-button" type="submit">Antwort senden <svg><use href="#i-arrow"/></svg></button>
+                  <button class="mic-button" id="mic-button" type="button" aria-pressed="false"><svg><use href="#i-mic"/></svg><span data-i18n="microphone">Mikrofon</span></button>
+                  <button class="primary-button" type="submit"><span data-i18n="sendReply">Antwort senden</span> <svg><use href="#i-arrow"/></svg></button>
                 </div>
               </form>
-              <p class="support-note" id="speech-note" role="status">Tippen funktioniert immer. Sprache kann der Browser online verarbeiten.</p>
+              <p class="support-note" id="speech-note" role="status" data-i18n="speechNote">Tippen funktioniert immer. Sprache kann der Browser online verarbeiten.</p>
             </section>
 
             <aside class="card transcript-card" aria-labelledby="transcript-title">
-              <div class="card-header"><h2 id="transcript-title">Gespräch</h2></div>
+              <div class="card-header"><h2 id="transcript-title" data-i18n="conversation">Gespräch</h2></div>
               <ol id="transcript-list" class="transcript-list" aria-live="polite"></ol>
             </aside>
           </div>
@@ -164,23 +156,23 @@
           <div class="results-wrap">
             <section class="card result-hero">
               <div class="result-score" id="result-score">0</div>
-              <div><h1 id="results-title">Guter Anfang.</h1><p id="result-summary">Deine Auswertung ist bereit.</p></div>
+              <div><h1 id="results-title">Guter Anfang.</h1><p id="result-summary" data-i18n="evaluationReady">Deine Auswertung ist bereit.</p></div>
             </section>
             <div class="results-grid">
-              <section class="card"><h2>Dein Gesprächsprofil</h2><div id="score-breakdown" class="score-breakdown"></div></section>
-              <section class="card"><h2>Konkretes Feedback</h2><ul id="feedback-list" class="feedback-list"></ul></section>
+              <section class="card"><h2 data-i18n="callProfile">Dein Gesprächsprofil</h2><div id="score-breakdown" class="score-breakdown"></div></section>
+              <section class="card"><h2 data-i18n="feedback">Konkretes Feedback</h2><ul id="feedback-list" class="feedback-list"></ul></section>
             </div>
-            <div class="result-actions"><button class="secondary-button back-dashboard" type="button">Zur Übersicht</button><button class="primary-button" id="retry-call" type="button">Noch einmal <svg><use href="#i-arrow"/></svg></button></div>
+            <div class="result-actions"><button class="secondary-button back-dashboard" type="button" data-i18n="toDashboard">Zur Übersicht</button><button class="primary-button" id="retry-call" type="button"><span data-i18n="again">Noch einmal</span> <svg><use href="#i-arrow"/></svg></button></div>
           </div>
         </section>
 
         <section id="history-view" class="view" aria-labelledby="history-title">
-          <div class="page-heading compact"><div><h1 id="history-title">Deine Gespräche.</h1><p>Nur in diesem Browser. Keine Cloud, kein Konto.</p></div></div>
+          <div class="page-heading compact"><div><h1 id="history-title" data-i18n="yourCalls">Deine Gespräche.</h1><p data-i18n="historyPrivacy">Nur in diesem Browser. Keine Cloud, kein Konto.</p></div></div>
           <section class="card history-card"><div id="history-list"></div></section>
         </section>
       </main>
 
-      <footer><span><svg><use href="#i-shield"/></svg> Texte und Verlauf bleiben lokal. Sprachverarbeitung hängt vom Browser ab.</span><span>Wer ruft an? · MVP</span></footer>
+      <footer><span><svg><use href="#i-shield"/></svg> <span data-i18n="footerPrivacy">Texte und Verlauf bleiben lokal. Sprachverarbeitung hängt vom Browser ab.</span></span><span data-i18n="brandFooter">Wer ruft an? · MVP</span></footer>
     </div>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
